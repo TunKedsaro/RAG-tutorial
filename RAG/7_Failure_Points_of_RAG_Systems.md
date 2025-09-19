@@ -1,3 +1,24 @@
+### Challenges in Building RAG Systems
+![[03.png]]
+##### Cognitive reviewer 
+- is a RAG system design to assist researchers for analyzing scientific document.
+- It's ranks all documents based on the objective for manual review by the researcher.
+- Researchers can pose questions directly against the entire document set.
+##### AI tutor
+- Student can ask the questions about learning video content.
+- All content include PDFs, Videos and text documents.
+##### Biomedical Q&A
+- RAG system created using the BioASQ dataset containing
+	- Question
+	- document links
+	- answers
+- There are lot of question type like
+	- domain-specific
+	- question-answer paires
+	- yes/no
+	- text summarisation
+	- factoid
+	- list
 ![[02.png]]
 ![[04.png]]
 1. Missing content (FP1)
