@@ -23,8 +23,9 @@ Focus on
 API keys : [[API_keys]]
 
 ### 04 ColPali
+![[Pasted image 20250924143926.png]]
+source : https://huggingface.co/blog/manu/colpali
 Focus on
 - Vision LLM
 - OCR
 - English base (only)
-![[Pasted image 20250924143926.png]]

@@ -1,4 +1,4 @@
-Q : Chunk คืออะไร ? และการแบ่ง Chunk ควรทำอย่างไร?
+sQ : Chunk คืออะไร ? และการแบ่ง Chunk ควรทำอย่างไร?
 A : Chunk คือส่วนย่อยๆของข้อมูล (เช่น ข้อความ) ที่ถูกแบ่งออกมาจากเอกสารหรือต้นฉบับที่มีขนาดใหญ่ เพื่อให้ง่ายต่อการประมวลผลโดย Embedding Model และ LLM หลักการแบ่ง Chunk มีหลายวิธี เช่น
 - แบ่งตาขนาดคงที่ (Fixed-size)
 - แบ่งตามตัวคั่น (Recursive Character Splitting)
@@ -75,6 +75,49 @@ A :
 - Non-Instruct Model คือ Base Model (เช่น GPT-3 davinci) เป็นโมเดลภาษาทั่วไปที่สามารถใช้ในการ "ต่อข้อความ" (Text Completion) ได้ดีแต่อาจจะไม่ได้ทำตามคำสั่งโดยตรงเสมอไป ต้องมีการออกแบบ Prompt (Prompt Engineering) ที่ดีเพื่อให้ได้ผลลัพฑ์ตามต้องการ
 - Instruct Models (เช่น GPT3.5-Instruct, Gemini) เป็นโมเดลที่ถูก Fine-tuned มาโดยเฉพาะเพื่อหใ้ "ทำตามคำสั่ง" (Instructions) ของผู้ใช้ได้ดี เหมาะกับงานที่ต้องการคำตอบที่ตรงไปตรงมาเช่น การตอบคำถาม, สรุปความ, แปลภาษา
 
+Q : ถ้าจะ Design Chatbot ที่จำบทสนทนา Topic ต่างๆ ของ User ได้และตอบสิ่งที่เคยคุยหลัง Context ยาวมากๆ ได้แม่นยำ ควรเก็บ Chat Message ใน Vector DB ไหม?
+A : การเก็บ Chat Message ใน Vector DB เป็นหนึ่งในวิธีที่ดีในการสร้าง Long-term Memory ให้ Chatbot โดยแปลงแต่ละช่วงของบทสนทนา (หรือสรุปบทสนทนา) เป็น Embedding แล้วเก็บไว้เมื่อมีการสนทนาใหม่ ก็สามารถนำส่วนที่เกี่ยวข้องของบทสนทนาปัจจุบันไปค้นหาใน Vector DB เพื่อดึงบทสนทนาในอดีตที่เกี่ยวข้องกลับมาเป็น Context เพิ่มเติมให้ LLM ได้ทำให้ Chatbot สามารถ "จำ" เรื่องที่เคยคุยกันได้ดีขึ้น แม้ context Window ของ LLM เองจะมีจำกัด
+
+Q : RAG กับ MCP มีความเหมือนหรือว่าแตกต่างกันยังไง?
+A : 
+RAG (Retrieval-Augmented Generation)
+- เป้าหมายหลัก : ลด Hallucination ของโมเดล LLM เวลาเจอข้อมูลที่มันไม่รู้ โดยให้โมเดล "อ้างอิง" ข้อมูลจากฐานข้อมูล/เอกสารภายนอกก่อนตอบ
+- ลักษณะการทำงาน
+	1. รับ Prompt จากผู้ใช้
+	2. ไปค้นหาข้อมูลที่เกี่ยวข้องจากฐานความรู้ (DB, Vector DB, Elasticsearch)
+	3. นำข้อมูลที่ได้มาเสริมเข้า Context ของโมเดล
+	4. LLM สร้างคำตอบที่  grounded มากขึ้น
+- Use case หลัก : Chatbot, knowledge assistant, search Q&A
+MCP (Model Context Protocol)
+- เป้าหมายหลัก : ทำให้ LLM เชื่อมต่อกับ External tools, APIs, database หรือ services ได้แบบเป้นระบบมาตรฐานกลาง
+- ลักษณะการทำงาน
+	- LLM จะคุยกับ MCP server ผ่าน Protocal เดียวกัน (ไม่ต้อง custom integration สำหรับแต่ละ API)
+	- MCP server จะ Expose "resources" (เช่น query database, ดึงไฟล์, call API ภายนอก) ให้ LLM เรียกใช้
+	- เวลา LLM ตอบมันอาจจะไป เรียก MCP ก่อนเพื่อเอาข้อมูลเพิ่มเติมก่อนที่จะมีการสร้าง Context ก่อน generative
+- ข้อสังเกต
+	- MCP server ต้องเปิดเอาไว้เพื่อเป็น bridge ระหว่างโมเดล <-> external system
+	- MCP จะเน้นที่ "การจัดการ context และเชื่อมต่อกับ exteranal tools" มากกว่า
+	- ![[Pasted image 20250925102052.png]]
+
+Q : ถ้าอยากให้ Chatbot ตอบกลับเหมือนคนมากๆคิดว่าการใช้เพียงแค่ RAG และ Prompt เพียงพอหรือเปล่า? อยากจะตัดเรื่อง Finetune ออกไปเพราะว่ามี cost และค่าใช้จ่าย
+A : 
+- ปกติแล้วการ Finetune เนี้ยเราจะต้องใช้ Data เยอะมากๆ เรียกได้ว่าเป็น Massive data ในการอัดเข้าไปเพื่อ Finetune
+- มันเลยจบกันที่ RAG ไม่ก็จบกันที่เป็น Data science อาจจะเป็น Rulebase ด้วยซ้ำ
+- ![[Pasted image 20250925103359.png]]
+- ก็ให้ลองไปเรื่อยๆ ตามขั้นตอนนี้ โดย Fine tuning และ Training เนี้ยมันเริ่มมีค่าใช้จ่ายแล้ว
+- ลอง Hybrid ไหม เพิ่มเข้ามาใน RAG,การทำ Chunking , การทำ Graph RAG
 
 
-![[Pasted image 20250924183238.png]]
+Q : Pinecode สามารถ NHW (เป็นเทคนิคในการทำ indexing) 
+A : มันรองรับ
+
+Q : Guardrail มันรองรับภาษาไทยไหม?
+A : รองรับแต่ประสิทธิภาพไม่ค่อยดี 
+- ลองเป็น LLM ของ OpenAI (แต่มันจะเสีย cost LLama3,4) ตัว OpenSource ยังไม่ค่อยดี
+- สรุปมันขึ้นกับ LLM
+
+Q : Colpali
+A : 
+- Colpali แปลงรูปภาพ และเข้าใจเนื้อหาของภาพ เวลา Query ด้วย Text มันเลยสามารถเข้าใจได้และยังสามารถแสดงเป็นภาพได้ด้วย
+- Colpali เร็วกว่ามาก
+- แต่ถ้าเป็นภาษาไทย Cohere อาจจะดีกว่า
