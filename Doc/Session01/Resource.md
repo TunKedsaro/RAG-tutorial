@@ -29,3 +29,7 @@ Focus on
 - Vision LLM
 - OCR
 - English base (only)
+
+### 05 Embedding ภาษาไทย
+![[Pasted image 20250926132336.png]]![[Pasted image 20250926133237.png]]
+![[Pasted image 20250926133519.png]]
