@@ -1,0 +1,1 @@
+- Popularity bias refers to a phenomenon where the recommendation favors popular items over more diverse or niche ones.

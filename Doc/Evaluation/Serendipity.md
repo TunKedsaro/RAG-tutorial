@@ -1,0 +1,2 @@
+- It evaluates the system's ability to suggest items beyond the user's typical preferences or expectations.
+- 

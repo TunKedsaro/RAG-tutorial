@@ -1,0 +1,4 @@
+- ==Recommendation diversity assesses how varied the recommended items are for each user==
+- To compute this metric we have to ==measure the intra-list diversity by evaluating the average cosine Distance between pairs of items inside the list== Then ==average it across all user==
+- But It does not consider relevance
+- 
