@@ -1,0 +1,5 @@
+Extract and Evaluation
+https://arxiv.org/pdf/2307.15752
+
+Resume Evaluation
+https://www.researchgate.net/publication/389412924_Intelligent_Resume_Evaluation_Tool_Based_on_Machine_Learning_for_Analysis_And_Career_Advancement
