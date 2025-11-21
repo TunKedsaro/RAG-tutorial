@@ -1,0 +1,12 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: simpleapi-service
+spec:
+  template:
+    spec:
+      containers:
+        - image: asia-southeast1-docker.pkg.dev/cs-poc-6ybmdro11muhuzqa0ti4uuj/custom-fastapi/custom-fastapi:latest
+          env:
+          ports:
+            - containerPort: 4000
