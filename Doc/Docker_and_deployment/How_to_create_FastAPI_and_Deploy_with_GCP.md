@@ -1,11 +1,37 @@
 - Python
 - Docker
-- Fastapi
-- artifact registry
+- FastAPI
+- Artifact registry
 - GCR
+### 0. Folder structure
+source : https://www.youtube.com/watch?v=DQwAX5pS4E8&t=1189s
+```
+root@da8c8a61a3aa:/code# tree
+├── Dockerfile.dev
+├── Dockerfile.prod
+├── cloudbuild.yaml
+├── requirements.txt
+├── service.yaml
+└── src
+    ├── __pycache__
+    │   └── main.cpython-312.pyc
+    ├── main.py
+    └── smokeTest
+        ├── __init__.py
+        ├── __pycache__
+        │   ├── __init__.cpython-312.pyc
+        │   └── router.cpython-312.pyc
+        └── router.py
+```
 ### 1. Create a Dev Container
-1. <code>mkdir .devcontainer</code>
-2. <code>echo "" > .devcontainer/devcontainer.json</code>
+1. create folder mkdir .devcontainer
+```
+mkdir .devcontainer
+```
+2. create file in .devcontainer folder
+```
+echo "" > .devcontainer/devcontainer.json
+```
    source : Dev container metadata reference (https://containers.dev/implementors/json_reference/)
 ```
    {
@@ -33,7 +59,11 @@
     "runArgs": []
 }
 ```
-3. <code>echo "" > Dockerfile.dev</code>
+3. create Dockerfile.dev
+```
+echo "" > Dockerfile.dev  
+```
+paste this
 ```
 FROM python:3.12-slim
 
@@ -43,9 +73,19 @@ WORKDIR /code
 
 ENV PYTHONPATH=/code/src
 ```
-3. <code>docker build -f Dockerfile.dev -t simpleapi-dev .</code>
-4. <code>docker run -it --name simpleapi-dev-container -p 8000:8000 -v %cd%:/code simpleapi-dev bash</code>
-5. check
+4. create image on docker
+```
+docker build -f Dockerfile.dev -t simpleapi-dev .
+```
+5. start docker then exec in it
+```
+docker run -it --name simpleapi-dev-container -p 8000:8000 -v %cd%:/code simpleapi-dev bash
+```
+or
+```
+docker run -it --name simplegemini-dev-container -p 4000:4000 -v %cd%:/code simplegemini-dev bash
+```
+6. check these things
 ```
 root@f8962855a682:/code# git version
 git version 2.47.3
@@ -183,9 +223,12 @@ docker rm -f simpleapi-dev-container
  => => writing image sha256:5bdca6fe4cf0b1c537db495298c6857b80804b1914a02de6  0.0s
  => => naming to docker.io/library/fastapi-dev                                0.0s
 ```
-3. Run it
-   <code>docker run -it --name simpleapi-dev-container -p 8000
-:8000 -v %cd%:/code simpleapi-dev bash</code>
+3. Run it to start docker container then exec it
+```
+docker run -it --name simpleapi-dev-container -p 8000
+:8000 -v %cd%:/code simpleapi-dev bash
+```
+Now we got gcloud
 ```
 root@da8c8a61a3aa:/code# gcloud --version
 Google Cloud SDK 473.0.0
@@ -366,12 +409,12 @@ Some things to try next:
 * Run `gcloud cheat-sheet` to see a roster of go-to `gcloud` commands.
 ```
 
-
+Log in
 
 ![[Pasted image 20251121132247.png]]
-
+Copy this
 ![[Pasted image 20251121132320.png]]
-
+Then paste in terminal to connect with GCP
 5. Enable artifact registry
    ![[Pasted image 20251120105621.png]]
    
@@ -383,6 +426,8 @@ gcloud artifacts repositories create simpleapi \
   --location=asia-southeast1
 ```
 ![[Pasted image 20251121133029.png]]
+You gonna got your docker image on Artifact register
+
 7. Create Dockerfile.prod
    <code>echo "" > Dockerfile.prod</code>
 ```
@@ -452,6 +497,16 @@ spec:
 gcloud run services replace service.yaml \
     --region asia-southeast1
 ```
+or this command (This command is better !!! above command can use to deploy but not refresh)
+```
+gcloud run deploy simpleapi-service \
+  --image="asia-southeast1-docker.pkg.dev/cs-poc-6ybmdro11muhuzqa0ti4uuj/simpleapi/simpleapi:latest" \
+  --region="asia-southeast1" \
+  --memory=2Gi \
+  --cpu=2 \
+  --max-instances=5 \
+  --set-env-vars APP_ENV=prod
+```
 ![[Pasted image 20251121134654.png]]![[Pasted image 20251121134714.png]]
 11. Take token
     <code>gcloud auth print-identity-token</code>
@@ -484,3 +539,30 @@ gcloud run deploy simpleapi-service \
 ```
 4. Test it on Postman
 ![[Pasted image 20251121141216.png]]
+
+
+##### 5. Update
+gcloud builds submit \
+  --config=cloudbuild.yaml \
+  --project=cs-poc-6ybmdro11muhuzqa0ti4uuj
+
+OR 
+
+gcloud builds submit --config=cloudbuild.yaml
+
+
+gcloud run deploy simplegemini-service \
+  --image="asia-southeast1-docker.pkg.dev/cs.../simplegemini:latest" \
+  --region="asia-southeast1" \
+  --port=4000 \
+  --memory=2Gi \
+  --cpu=2 \
+  --max-instances=5 \
+  --set-env-vars APP_ENV=prod,GOOGLE_API_KEY="AIzaSyBH3f--tQJZ3uUOJtu7FTVTKCNDYaKbHg8"
+  
+
+
+
+
+
+
