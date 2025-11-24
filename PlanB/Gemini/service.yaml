@@ -1,0 +1,14 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: simplegemini-service
+spec:
+  template:
+    spec:
+      containers:
+        - image: asia-southeast1-docker.pkg.dev/cs-poc-6ybmdro11muhuzqa0ti4uuj/simplegemini/simplegemini:latest
+          env:
+            - name: GOOGLE_API_KEY
+              value: "CHANGE_THIS_LATER"
+          ports:
+            - containerPort: 4000
