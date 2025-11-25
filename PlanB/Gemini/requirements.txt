@@ -2,5 +2,4 @@ google-genai
 fastapi
 uvicorn
 pydantic
-
-
+python-dotenv

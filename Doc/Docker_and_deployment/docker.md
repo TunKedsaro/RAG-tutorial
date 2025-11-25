@@ -1,11 +1,20 @@
 ##### Build docker
-<code>docker build -f Dockerfile.dev -t fastapi-dev .</code>
-
+```
+docker build -f Dockerfile.dev -t simplegemini-dev .
+```
 ##### Check docker image
 <code>docker images</code>
 ##### Access to docker
 <code>docker run -it --name fastapi-dev-container -p 8000:8000 -v %cd%:/code fastapi-dev bash</code>
+or
+```
+docker run -it --name simplegemini-dev-container -p 8000:8000 -e GOOGLE_API_KEY="AIzaSy...Nvg" -v %cd%:/code simplegemini-dev bash
 
+
+import os
+os.getenv("GOOGLE_API_KEY")
+>>> 'AIzaSy...Nvg'
+```
 ##### Stop and remove container
 <code>docker stop fastapi-dev-container</code>
 <code>docker rm fastapi-dev-container</code>
