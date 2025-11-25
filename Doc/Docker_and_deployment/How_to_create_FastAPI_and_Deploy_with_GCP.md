@@ -511,7 +511,8 @@ gcloud run deploy simpleapi-service \
 11. Take token
     <code>gcloud auth print-identity-token</code>
 ```
-eyJhbGciOiJSUzI1NiIsImtpZCI6ImE1NzMzYmJiZDgxOGFhNWRiMTk1MTk5Y2Q1NjhlNWQ2ODUxMzJkM2YiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTE3ODE4ODEyODIzMTc4NjQ5NjM3IiwiZW1haWwiOiJ0dW4ua0B0ZXJyYWRpZ2l0YWx2ZW50dXJlcy5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6InNMSUc3YlVpSTVnMWdjMkRPUWF1b0EiLCJpYXQiOjE3NjM3MDc5MzAsImV4cCI6MTc2MzcxMTUzMH0.PgYt0rOP5EvDY80eftqGA-0H7tQiezRUT6CAZ58UiYxJOK7qdDR1RubFPueSYuoaE7it1Qqv0HKEXZ0H3da6aC3Sk52xgDgdwOYIoIthpBR6D9wrV0blfu5jNEx_tVPNvTv0lyPN7QQ_nNuKaPFOUnzpmbVHlE8vAvIIM_LckgGisY8vKxzfEiwCx9z52ZLyczftf0PHloXtQqWqRR8NGmjHcVoCN_k8Is-VHT_6dJxqMN2RqGZHF9B26PIsqpjDWWkbQYKjLimnzLiqPwEsTXU7ExHSYQ9vq1001i4SQOL1GpBaW7TEmpH11GTszkE5yU6flFAZH6UGEQ-stpLkrQ
+eyJhbGciOiJSUzI1NiIsImtpZCI6ImE1NzMzYmJiZDgxOGFhNWRiMTk1MTk5Y2Q1NjhlNWQ2ODUxMzJkM2Y...
+H11GTszkE5yU6flFAZH6UGEQ-stpLkrQ
 ```
 12. Postman
     ![[Pasted image 20251121135509.png]]
@@ -550,19 +551,29 @@ OR
 
 gcloud builds submit --config=cloudbuild.yaml
 
-
 gcloud run deploy simplegemini-service \
-  --image="asia-southeast1-docker.pkg.dev/cs.../simplegemini:latest" \
+  image="asia-southeast1-docker.pkg.dev/poc-piloturl-nonprod/simplegemini/simplegemini:latest" \
   --region="asia-southeast1" \
   --port=4000 \
   --memory=2Gi \
   --cpu=2 \
   --max-instances=5 \
-  --set-env-vars APP_ENV=prod,GOOGLE_API_KEY="AIzaSyBH3f--tQJZ3uUOJtu7FTVTKCNDYaKbHg8"
+  --set-env-vars APP_ENV=prod,GOOGLE_API_KEY="AIzaS...Hg8"
   
 
 
 
+### 6. Additional
+1. Check this project activate & register with GCP
+```
+>>> Account: [None]
+>>> Project: [None]
+
+gcloud info
+>>> Account: [tun.k@terradigitalventures.com]
+>>> Project: [cs-poc-6ybmdro11muhuzqa0ti4uuj]
+>>> Universe Domain: [googleapis.com] 
+```
 
 
 

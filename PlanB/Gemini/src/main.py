@@ -1,11 +1,13 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from src.gemini_client import analyse_text
-from src.sectionlevel import section_level_analyse
 from pydantic import BaseModel
 
 
-from src.skillmatch import section_level_analyse
+from src.gemini_client import analyse_text
+from src.sectionlevel import section_level_analyse
+from src.skillmatch import skill_match_analyse
+from src.expmatch import expmatch_analyse
+from src.contentquality import contentquality_analyse
 
 class AnalyseRequest(BaseModel):
     text: str
@@ -35,14 +37,28 @@ def hellth_Gemini(payload: AnalyseRequest = AnalyseRequest(
 
 # API 1 : 
 @app.post("/sectionlevel")
-def analyse(payload: AnalyseRequest):
+def sectionlevel_microservice(payload: AnalyseRequest):
     response = section_level_analyse(payload.text)
     return {"message": response}
 
 # API 2 : 
 @app.post("/skillmatch")
-def skillmatch_analyse(payload: AnalyseRequest):
+def skill_microservice(payload: AnalyseRequest):
+    print("File: main.py>def skillmatch_analyse")
     # print(payload.text)
-    response = section_level_analyse(payload.text)
+    response = skill_match_analyse(payload.text)
     return {"message": response}
 
+# API 3 : 
+@app.post("/expmatch")
+def exp_microservice(payload: AnalyseRequest):
+    print("File: main.py>def expmatch_analyse")
+    response = expmatch_analyse(payload.text)
+    return {"message": response}
+
+# API 4 : 
+@app.post("/contentquality")
+def contentquality_microservice(payload: AnalyseRequest):
+    print("File: main.py>def expmatch_analyse")
+    response = contentquality_analyse(payload.text)
+    return {"message": response}
