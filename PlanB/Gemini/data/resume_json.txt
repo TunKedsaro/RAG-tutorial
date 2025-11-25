@@ -1,0 +1,252 @@
+{
+  "contact_information": {
+    "name": "Surya Teja Menta",
+    "email": "-",
+    "phone": "+91 8309584461",
+    "linkedin": "-",
+    "jobdb_link": "-",
+    "portfolio_link": "suryatejamenta.co.in"
+  },
+  "professional_summary": {
+    "has_summary": "Yes",
+    "summary_points": [
+      "I’m Surya Teja Menta, Results-driven Senior Data Scientist with 4+ years of experience in Data Science, Machine Learning (ML), and Generative AI (GenAI).",
+      "Proven expertise in RAG (Retrieval-Augmented Generation), LLM fine-tuning, MLOps, and end-to-end AI solutions.",
+      "Strong background in data analytics, statistical modeling, AI-powered automation, and scalable AI architectures.",
+      "IBM Certified Professional Data Scientist with hands-on experience in LangChain, Hugging Face, OpenAI APIs, Vector Databases (ChromaDB, Pinecone), and cloud deployments (AWS, GCP).",
+      "Passionate about AI research, model optimization, and developing cutting-edge AI solutions."
+    ]
+  },
+  "education": [
+    {
+      "institution": "PBR VITS, Kavali, AP",
+      "degree": "Bachelor's Degree in Computer Science",
+      "dates": "June 2016 - May 2020",
+      "gpa": "78.3%",
+      "honors": "Participated in paper presentations and won prizes."
+    },
+    {
+      "institution": "Narayana Junior College, Kavali, AP",
+      "degree": "HSC",
+      "dates": "June 2014 - May 2016",
+      "gpa": "92.5%",
+      "honors": "-"
+    },
+    {
+      "institution": "Kranthi EM School, Kavali, AP",
+      "degree": "SSC",
+      "dates": "June 2004 - May 2014",
+      "gpa": "87%",
+      "honors": "Participated in school dramas, sports, etc."
+    }
+  ],
+  "experience": [
+    {
+      "title": "Senior Data Scientist",
+      "company": "Robert Bosch",
+      "dates": "Jan 2024 - Present",
+      "description": [
+        "Designed and deployed custom YOLOv8 models for computer vision applications.",
+        "Built multi-modal RAG pipelines for intelligent document processing, contextual retrieval, and GenAI-powered insights.",
+        "Worked on Time series data for Adnoc Project.",
+        "Developed ML algorithms for signal processing and sensor vibration data analytics using scikit-learn, PyTorch, and TensorFlow.",
+        "Worked on LLM fine-tuning, prompt engineering, and efficient model inference for enterprise AI applications.",
+        "Integrated MLOps best practices for scalable AI pipelines, model versioning, and automated deployment."
+      ]
+    },
+    {
+      "title": "Subject Matter Expert (Data Analyst)",
+      "company": "Tudip Technologies",
+      "dates": "Oct 2020 - Oct 2023",
+      "description": [
+        "Developed interactive analytics dashboards and data reports in Google Data Studio for content management analytics.",
+        "Automated text summarization & paraphrasing using NLP Transformers (BART, T5) and deployed on Google Cloud Run.",
+        "Built AI-powered data visualization tools to enhance real-time business intelligence and trend analysis.",
+        "Integrated LLM-powered chatbots with Google Sheets API to improve data accessibility across teams.",
+        "Recognized with the Best Team Award for highest client appreciation and impactful AI-driven automation."
+      ]
+    }
+  ],
+  "skills": {
+    "technical": [
+      "Data Science",
+      "Machine Learning",
+      "Deep Learning",
+      "NLP",
+      "Computer Vision",
+      "LLMs",
+      "LLM Fine Tuning",
+      "Generative AI",
+      "OpenCV",
+      "YOLOv8",
+      "Image Processing",
+      "Object Detection",
+      "GANs",
+      "Signal Processing",
+      "Time Series Analysis",
+      "Tensorflow",
+      "Pytorch",
+      "Keras",
+      "Langchain",
+      "GCP Cloud Run",
+      "Amazon SageMaker",
+      "Numpy",
+      "Pandas",
+      "Scikit-learn",
+      "Spacy",
+      "NLTK",
+      "Matplotlib",
+      "Seaborn",
+      "Scipy",
+      "Jupyter Notebooks",
+      "Docker",
+      "GitHub",
+      "Git",
+      "Google Data Studio",
+      "Statistics & Probability",
+      "Calculus",
+      "Mathematics",
+      "Linear Algebra",
+      "Statistical Analysis",
+      "Data Mining",
+      "Model Building",
+      "Model Deployment",
+      "Hypothesis Testing",
+      "Data Analytics"
+    ],
+    "soft_skills": [
+      "Analytical Thinking",
+      "Problem Solving",
+      "Collaboration",
+      "Communication",
+      "Continuous Learning",
+      "Adaptability",
+      "Time Management"
+    ],
+    "tools_with_levels": [
+      {
+        "tool": "Amazon SageMaker",
+        "level": "basic"
+      }
+    ],
+    "languages": [
+      {
+        "language": "Python",
+        "level": "-"
+      },
+      {
+        "language": "SQL",
+        "level": "-"
+      },
+      {
+        "language": "HTML",
+        "level": "-"
+      },
+      {
+        "language": "CSS",
+        "level": "-"
+      }
+    ]
+  }
+}
+```
+{'contact_information': {'name': 'Surya Teja Menta',
+  'email': '-',
+  'phone': '+91 8309584461',
+  'linkedin': '-',
+  'jobdb_link': '-',
+  'portfolio_link': 'suryatejamenta.co.in'},
+ 'professional_summary': {'has_summary': 'Yes',
+  'summary_points': ['I’m Surya Teja Menta, Results-driven Senior Data Scientist with 4+ years of experience in Data Science, Machine Learning (ML), and Generative AI (GenAI).',
+   'Proven expertise in RAG (Retrieval-Augmented Generation), LLM fine-tuning, MLOps, and end-to-end AI solutions.',
+   'Strong background in data analytics, statistical modeling, AI-powered automation, and scalable AI architectures.',
+   'IBM Certified Professional Data Scientist with hands-on experience in LangChain, Hugging Face, OpenAI APIs, Vector Databases (ChromaDB, Pinecone), and cloud deployments (AWS, GCP).',
+   'Passionate about AI research, model optimization, and developing cutting-edge AI solutions.']},
+ 'education': [{'institution': 'PBR VITS, Kavali, AP',
+   'degree': "Bachelor's Degree in Computer Science",
+   'dates': 'June 2016 - May 2020',
+   'gpa': '78.3%',
+   'honors': 'Participated in paper presentations and won prizes.'},
+  {'institution': 'Narayana Junior College, Kavali, AP',
+   'degree': 'HSC',
+   'dates': 'June 2014 - May 2016',
+   'gpa': '92.5%',
+   'honors': '-'},
+  {'institution': 'Kranthi EM School, Kavali, AP',
+   'degree': 'SSC',
+   'dates': 'June 2004 - May 2014',
+   'gpa': '87%',
+   'honors': 'Participated in school dramas, sports, etc.'}],
+ 'experience': [{'title': 'Senior Data Scientist',
+   'company': 'Robert Bosch',
+   'dates': 'Jan 2024 - Present',
+   'description': ['Designed and deployed custom YOLOv8 models for computer vision applications.',
+    'Built multi-modal RAG pipelines for intelligent document processing, contextual retrieval, and GenAI-powered insights.',
+    'Worked on Time series data for Adnoc Project.',
+    'Developed ML algorithms for signal processing and sensor vibration data analytics using scikit-learn, PyTorch, and TensorFlow.',
+    'Worked on LLM fine-tuning, prompt engineering, and efficient model inference for enterprise AI applications.',
+    'Integrated MLOps best practices for scalable AI pipelines, model versioning, and automated deployment.']},
+  {'title': 'Subject Matter Expert (Data Analyst)',
+   'company': 'Tudip Technologies',
+   'dates': 'Oct 2020 - Oct 2023',
+   'description': ['Developed interactive analytics dashboards and data reports in Google Data Studio for content management analytics.',
+    'Automated text summarization & paraphrasing using NLP Transformers (BART, T5) and deployed on Google Cloud Run.',
+    'Built AI-powered data visualization tools to enhance real-time business intelligence and trend analysis.',
+    'Integrated LLM-powered chatbots with Google Sheets API to improve data accessibility across teams.',
+    'Recognized with the Best Team Award for highest client appreciation and impactful AI-driven automation.']}],
+ 'skills': {'technical': ['Data Science',
+   'Machine Learning',
+   'Deep Learning',
+   'NLP',
+   'Computer Vision',
+   'LLMs',
+   'LLM Fine Tuning',
+   'Generative AI',
+   'OpenCV',
+   'YOLOv8',
+   'Image Processing',
+   'Object Detection',
+   'GANs',
+   'Signal Processing',
+   'Time Series Analysis',
+   'Tensorflow',
+   'Pytorch',
+   'Keras',
+   'Langchain',
+   'GCP Cloud Run',
+   'Amazon SageMaker',
+   'Numpy',
+   'Pandas',
+   'Scikit-learn',
+   'Spacy',
+   'NLTK',
+   'Matplotlib',
+   'Seaborn',
+   'Scipy',
+   'Jupyter Notebooks',
+   'Docker',
+   'GitHub',
+   'Git',
+   'Google Data Studio',
+   'Statistics & Probability',
+   'Calculus',
+   'Mathematics',
+   'Linear Algebra',
+   'Statistical Analysis',
+   'Data Mining',
+   'Model Building',
+   'Model Deployment',
+   'Hypothesis Testing',
+   'Data Analytics'],
+  'soft_skills': ['Analytical Thinking',
+   'Problem Solving',
+   'Collaboration',
+   'Communication',
+   'Continuous Learning',
+   'Adaptability',
+   'Time Management'],
+  'tools_with_levels': [{'tool': 'Amazon SageMaker', 'level': 'basic'}],
+  'languages': [{'language': 'Python', 'level': '-'},
+   {'language': 'SQL', 'level': '-'},
+   {'language': 'HTML', 'level': '-'},
+   {'language': 'CSS', 'level': '-'}]}}

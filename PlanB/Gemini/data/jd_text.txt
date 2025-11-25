@@ -1,0 +1,74 @@
+Data Scientist (Mid-Level)
+
+Bank of Ayudhya Public Company Limited (Ayudhya Capital Auto)
+ดูงานทั้งหมด
+ยานนาวา กรุงเทพมหานคร (ไฮบริด)
+งานคณิตศาสตร์ งานสถิติ งานสารสนเทศศาสตร์ (งานวิทยาศาสตร์ งานเทคโนโลยี)
+งานเต็มเวลา
+เพิ่มเงินเดือนที่คาดหวังเข้าไปในโปรไฟล์ของคุณสำหรับข้อมูลเชิงลึก
+Posted 1 วันที่ผ่านมา
+
+Responsibilities
+Identify valuable data sources and automate data collection processes.
+
+Undertake preprocessing and transformation of structured and unstructured data.
+
+Analyze large datasets to discover meaningful trends, patterns, and business insights.
+
+Build and deploy predictive models, machine learning algorithms, and NLP models (classification, clustering, topic modeling, sentiment analysis).
+
+Combine models through ensemble techniques to improve accuracy.
+
+Design and maintain end-to-end data pipelines and migrate workflows to cloud platforms (e.g., Databricks, BigQuery, PySpark).
+
+Develop and maintain dashboards (Power BI, Looker, Tableau) to communicate insights effectively.
+
+Collaborate with cross-functional teams including product, engineering, and business stakeholders to align data solutions with business needs.
+
+Propose solutions and strategies to address complex business challenges.
+
+Qualifications
+Bachelor’s or Master's degree in Data Science, Statistics, or related field
+
+Proven experience as a Data Scientist or Data Analyst, with demonstrated success in building and deploying data-driven solutions.
+
+Strong proficiency in Python, SQL, PySpark; experience with big data platforms (Databricks, BigQuery, Redshift, Hadoop).
+
+Solid understanding of machine learning and deep learning frameworks.
+
+Experience in data mining, feature engineering, and statistical modeling.
+
+Strong math and statistical skills; analytical mindset with problem-solving aptitude.
+
+Excellent communication and presentation skills to engage with both technical and non-technical stakeholders.
+
+(Preferred) Experience with stream processing, NLP, and scalable ‘big data’ stores.
+
+Applicants can read the Personal Data Protection Announcement of the Bank's Human Resources Function by typing the link from the image that stated below
+
+EN: (https://krungsri.com/b/privacynoticeen)
+
+ผู้สมัครสามารถอ่านประกาศการคุ้มครองข้อมูลส่วนบุคคลส่วนงานทรัพยากรบุคคลของธนาคารได้โดยการพิมพ์ลิงค์จากรูปภาพที่ปรากฎด้านล่าง
+
+ภาษาไทย: (https://krungsri.com/b/privacynoticeth)
+
+หมายเหตุ ธนาคารมีความจำเป็นและจะมีขั้นตอนการตรวจสอบข้อมูลส่วนบุคคลเกี่ยวกับประวัติอาชญากรรมของผู้สมัคร ก่อนที่ผู้สมัครจะได้รับการพิจารณาเข้าร่วมงานกับธนาคารกรุงศรีฯ
+
+Remark: The bank needs to and will have a process for verifying personal information related to the criminal history of applicants before they are considered for employment with the bank.
+
+
+
+ปลดล็อกข้อมูลเชิงลึกของตำแหน่งงาน
+เงินเดือนตรงตามต้องการ
+จำนวนผู้สมัคร
+ทักษะตรงกับที่คุณมี
+คำถามจากผู้ประกอบการ
+ใบสมัครของคุณจะประกอบด้วยคำถามต่อไปนี้:
+Which of the following languages are you fluent in?
+Which of the following statements best describes your right to work in Thailand?
+Which of the following programming languages are you experienced in?
+What's your expected monthly basic salary?
+Have you worked in a role which requires experience with machine learning techniques?
+Which of the following types of qualifications do you have?
+How many years' experience do you have using SQL queries?
+How many years' experience do you have as a Data Scientist?
