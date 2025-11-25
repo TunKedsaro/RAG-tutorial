@@ -1,6 +1,8 @@
 import os
 from google import genai
 
+from utils.file_loader import load_file
+
 # Deploy mode
 API_KEY = os.getenv("GOOGLE_API_KEY")
 if not API_KEY:
@@ -9,11 +11,16 @@ client = genai.Client(api_key=API_KEY)
 
 
 def section_level_analyse(resume_json: str) -> str:
+    if resume_json is None or resume_json == "string":
+        print("There are no correct resume_json format")
+        print("Downloading defualt resume_json ...")
+        resume_json = load_file("resume_json.txt")
+        
     prompt = f"""
         You are an expert HR evaluator and resume reviewer.
 
         You will receive structured resume data in JSON format.
-        Your task is to assign a completeness score (0–20) for each of the five major sections.
+        Your task is to assign a completeness score (0-git 20) for each of the five major sections.
 
         ### Sections to evaluate:
         1. **Contact Information**
@@ -70,6 +77,7 @@ def section_level_analyse(resume_json: str) -> str:
         ### Resume Data ###
         {resume_json}
         """
+    
     resp = client.models.generate_content(
         model="gemini-2.5-flash",
         contents=prompt,

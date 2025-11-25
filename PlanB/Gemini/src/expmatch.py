@@ -2,28 +2,13 @@ import os
 from google import genai
 import json
 
+from utils.file_loader import load_file
+
 # Deploy mode
 API_KEY = os.getenv("GOOGLE_API_KEY")
 if not API_KEY:
     raise RuntimeError("GOOGLE_API_KEY is not set in environment")
 client = genai.Client(api_key=API_KEY)
-
-
-def load_default_resume():
-    print("File: expmatch.py>def load_default_resume")
-
-    base_dir  = os.path.dirname(os.path.dirname(__file__))   # /code
-    file_path = os.path.join(base_dir, "data", "resume_json.txt")
-    with open(file_path, "r", encoding="utf-8") as f:
-        return f.read()
-    
-def load_default_jd():
-    print("File: expmatch.py>def load_default_jd")
-
-    base_dir  = os.path.dirname(os.path.dirname(__file__))   # /code
-    file_path = os.path.join(base_dir, "data", "jd_text.txt")
-    with open(file_path, "r", encoding="utf-8") as f:
-        return f.read()
 
 def expmatch_analyse(resume_json: str | None = None) -> str:
     print("File: expmatch.py>def expmatch_analyse")
@@ -31,9 +16,9 @@ def expmatch_analyse(resume_json: str | None = None) -> str:
     if resume_json is None or resume_json == "string":
         print("There are no correct resume_json format")
         print("Downloading defualt resume_json ...")
-        resume_json = load_default_resume()
+        resume_json = load_file("resume_json.txt")
 
-    jd_text = load_default_jd()
+    jd_text = load_file("jd_text.txt")
     prompt = f"""
         You are an HR evaluation assistant specialized in data science recruitment.
 
