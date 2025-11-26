@@ -1,0 +1,12 @@
+["Python", "R", "SQL", "Scala", "Julia", "Java",
+"Linear Algebra", "Calculus", "Probability", "Descriptive Statistics", "Inferential Statistics", "Hypothesis Testing", "Bayesian Statistics",
+"Supervised Learning", "Unsupervised Learning", "Reinforcement Learning", "Neural Networks", "Convolutional Neural Networks (CNN)", "Recurrent Neural Networks (RNN)", "Transformers", "Gradient Boosting", "Decision Trees", "Ensemble Learning", "Feature Engineering", "Model Evaluation", "Hyperparameter Tuning",
+"Pandas", "NumPy", "Scikit-learn", "SciPy", "Statsmodels", "Dask", "Polars",
+"Matplotlib", "Seaborn", "Plotly", "Power BI", "Tableau", "ggplot2", "Altair", "Dash",
+"MySQL", "PostgreSQL", "MongoDB", "Hadoop", "Spark", "Hive", "Snowflake", "BigQuery", "Redshift",
+"AWS", "GCP", "Azure", "Docker", "Kubernetes", "CI/CD", "MLflow", "DVC", "Kubeflow", "SageMaker", "Vertex AI",
+"ETL", "Data Warehousing", "Airflow", "Kafka", "Data Pipeline Design",
+"Text Preprocessing", "Tokenization", "Word Embeddings", "Transformers", "BERT", "LLMs", "Sentiment Analysis", "Topic Modeling",
+"Communication", "Problem Solving", "Critical Thinking", "Storytelling with Data", "Business Acumen", "Collaboration",
+"Git", "GitHub", "Jupyter Notebook", "VS Code", "PyCharm", "Linux", "Bash",
+"Finance", "Healthcare", "Marketing Analytics", "Supply Chain", "Geospatial Analysis", "Computer Vision"]
