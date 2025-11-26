@@ -6,7 +6,7 @@ spec:
   template:
     spec:
       containers:
-        - image: asia-southeast1-docker.pkg.dev/cs-poc-6ybmdro11muhuzqa0ti4uuj/simplegemini/simplegemini:latest
+        - image: asia-southeast1-docker.pkg.dev/poc-piloturl-nonprod/simplegemini/simplegemini:latest
           env:
             - name: GOOGLE_API_KEY
               value: "CHANGE_THIS_LATER"

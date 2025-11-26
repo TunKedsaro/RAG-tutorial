@@ -7,7 +7,20 @@ from pydantic import BaseModel
 class AnalyseRequest(BaseModel):
     text: str
 
-app = FastAPI()
+app = FastAPI(
+    title="CV/Resume Evaluation API",
+    version="0.1.4",
+    description=(
+        "Microservices for CV/Resume evaluation (In progress krub)"
+        "<br>"
+        "Last time Update : 2511251951"
+    ),
+    contact={
+        "name": "Tun Kedsaro",
+        "email": "tun.k@terradigitalventures.com"
+    },
+)
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -19,7 +32,7 @@ app.add_middleware(
 
 @app.get("/")
 def health():
-    return {"message": "I am ready"}
+    return {"message": "Ok I am ready"}
 
 @app.post("/analyse")
 def analyse(payload: AnalyseRequest):
