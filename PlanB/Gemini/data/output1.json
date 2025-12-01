@@ -1,0 +1,56 @@
+{
+    "Role_Relevance": {
+        "1_1_Role_Matching": {
+            "Score": 7,
+            "Feedback": "Role and education show partial alignment."
+        },
+        "1_2_Skill_Match": {
+            "Score": 3,
+            "Feedback": "Some skills overlap the required role skills."
+        },
+        "1_3_Experience_Matching": {
+            "Score": 9,
+            "Feedback": "Experience has moderate relevance to job requirements."
+        },
+        "1_4_Education_Relevance": {
+            "Score": 5,
+            "Feedback": "Education relevance is low for this role."
+        }
+    },
+    "Content_Quality": {
+        "2_1_Quantifiable_Impact": {
+            "Score": 1,
+            "Feedback": "No quantifiable impact found in the bullet points."
+        },
+        "2_2_Skill_Demonstration": {
+            "Score": 8,
+            "Feedback": "Candidate demonstrates clear technical skills in bullet points."
+        },
+        "2_3_Specificity_Relevance": {
+            "Score": 4,
+            "Feedback": "Descriptions are specific but can include more clarity."
+        },
+        "2_4_Grammar_Language": {
+            "Score": 6,
+            "Feedback": "Grammar and language usage are acceptable."
+        }
+    },
+    "Section_Level_Criteria": {
+        "3_1_Contact_Information": {
+            "Score": 2,
+            "Feedback": "Contact details mostly complete; some links missing."
+        },
+        "3_2_Education": {
+            "Score": 10,
+            "Feedback": "Education details provided but missing honors or GPA."
+        },
+        "3_3_Experience_Section": {
+            "Score": 0,
+            "Feedback": "Experience bullets need more structure and clarity."
+        },
+        "3_4_Skills_Section": {
+            "Score": 7,
+            "Feedback": "Skills section is complete and properly categorized."
+        }
+    }
+}

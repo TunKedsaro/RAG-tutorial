@@ -1,0 +1,30 @@
+
+{
+    "Criteria1":{
+        "weight":x.xx,
+        "SubCriteria":{
+            "SubCriteria1.1":{"Score":0,"Must":True/Flast,"Feedback":"xxx"},
+            "SubCriteria1.2":{"Score":0,"Must":True/Flast,"Feedback":"xxx"},
+            "SubCriteria1.3":{"Score":0,"Must":True/Flast,"Feedback":"xxx"},
+            "SubCriteria1.4":{"Score":0,"Must":True/Flast,"Feedback":"xxx"}
+        }
+    }
+    "Criteria2":{
+        "weight":x.xx,
+        "SubCriteria":{
+            "SubCriteria2.1":{"Score":0,"Must":True/Flast,"Feedback":"xxx"},
+            "SubCriteria2.2":{"Score":0,"Must":True/Flast,"Feedback":"xxx"},
+            "SubCriteria2.3":{"Score":0,"Must":True/Flast,"Feedback":"xxx"},
+            "SubCriteria2.4":{"Score":0,"Must":True/Flast,"Feedback":"xxx"}
+        }
+    }
+    "Criteria3":{
+        "weight":x.xx,
+        "SubCriteria":{
+            "SubCriteria3.1":{"Score":0,"Must":True/Flast,"Feedback":"xxx"},
+            "SubCriteria3.2":{"Score":0,"Must":True/Flast,"Feedback":"xxx"},
+            "SubCriteria3.3":{"Score":0,"Must":True/Flast,"Feedback":"xxx"},
+            "SubCriteria3.4":{"Score":0,"Must":True/Flast,"Feedback":"xxx"}
+        }
+    }
+}
