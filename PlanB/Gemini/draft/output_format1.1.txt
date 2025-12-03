@@ -1,0 +1,74 @@
+# version 1.1
+{
+    "Criteria1": {
+        "SubCriteria1.1":{
+            "Score":0,
+            "Feedback":"xxx",
+            "Time":xxx,
+            "Tokens":{
+                "prompt_tokens" : xxx,
+                "output_tokens" : xxx,
+                "input_cost"    : xxx,
+                "output_cost"   : xxx,
+                "total_cost"    : xxx
+                }
+            },
+        "SubCriteria1.2":{
+            "Score":0,
+            "Feedback":"xxx",
+            "Time":xxx,
+            "Tokens":{
+                "prompt_tokens" : xxx,
+                "output_tokens" : xxx,
+                "input_cost"    : xxx,
+                "output_cost"   : xxx,
+                "total_cost"    : xxx
+                }
+            },
+        "SubCriteria1.3":{
+            "Score":0,
+            "Feedback":"xxx",
+            "Time":xxx,
+            "Tokens":{
+                "prompt_tokens" : xxx,
+                "output_tokens" : xxx,
+                "input_cost"    : xxx,
+                "output_cost"   : xxx,
+                "total_cost"    : xxx
+                }     
+            },
+        "SubCriteria1.4":{
+            "Score":0,
+            "Feedback":"xxx",
+            "Time":xxx,
+            "Tokens":{
+                "prompt_tokens" : xxx,
+                "output_tokens" : xxx,
+                "input_cost"    : xxx,
+                "output_cost"   : xxx,
+                "total_cost"    : xxx
+                }
+            }
+    },
+    "Criteria2": {
+        "SubCriteria2.1":{"Score":0,"Feedback":"xxx"},
+        "SubCriteria2.2":{"Score":0,"Feedback":"xxx"},
+        "SubCriteria2.3":{"Score":0,"Feedback":"xxx"},
+        "SubCriteria2.4":{"Score":0,"Feedback":"xxx"}
+    },
+    "Criteria3": {
+        "SubCriteria3.1":{"Score":0,"Feedback":"xxx"},
+        "SubCriteria3.2":{"Score":0,"Feedback":"xxx"},
+        "SubCriteria3.3":{"Score":0,"Feedback":"xxx"},
+        "SubCriteria3.4":{"Score":0,"Feedback":"xxx"}
+    },
+}
+
+
+{
+    "prompt_tokens" : xxx,
+    "output_tokens" : xxx,
+    "input_cost"    : xxx,
+    "output_cost"   : xxx,
+    "total_cost"    : xxx
+}

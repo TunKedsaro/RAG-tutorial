@@ -1,0 +1,142 @@
+flowchart TD
+    %% ===== Input =====
+    Ip1["Resume_JSON<br>(Ip1)"]
+    Ip2["Ideal_skills<br>(Ip2)"]
+    Ip3["Target_role<br>(Ip3)"]
+    Ip4["Role_in_DB<br>(Ip4)"]
+    subgraph Input["Input component"]
+        Ip1
+        Ip2
+        Ip3
+        Ip4
+    end
+    classDef Input fill:#D9EFFF,stroke:#004D80,color:#000
+    class Ip1,Ip2,Ip3,Ip4 Input
+
+    %% ===== Gemini =====
+    Gem1(("Gemini1<br>(Gem1)"))
+    Gem2(("Gemini2<br>(Gem2)"))
+    Gem3(("Gemini3<br>(Gem3)"))
+    Gem4(("Gemini4<br>(Gem4)"))
+    subgraph Gemini["Gemini model"]
+        Gem1
+        Gem2
+        Gem3
+        Gem4
+    end
+    classDef Gemini fill:#F8BBD0,stroke:#AD1457,color:#000
+    class Gem1,Gem2,Gem3,Gem4 Gemini
+
+    %% ================================================
+    %% Criteria 1
+    Ctr11["Role Matching<br>(Ctr11)"]
+    Ctr12["Skill Matching<br>(Ctr12)"]
+    Ctr13["Experience Matching<br>(Ctr13)"]
+    Ctr14["Role relevance score<br>(Ctr14)"]
+    Ctr15["Skill score<br>(Ctr15)"]
+    Ctr16["Experience score<br>(Ctr16)"]
+    Ctr17["Role relevance score<br>(Ctr17)"]
+
+    Ip3   --> |"(00)"|Ctr11
+    Ip4   --> |"(01)"|Ctr11
+    Ctr11 --> |"(02)"|Ctr14
+
+    Ip2   --> |"(03)"|Ctr12
+    Ip1   --> |"(04)"|Ctr12 
+    Gem4  --> |"(05)"|Ctr12
+    Ctr12 --> |"(06)"|Ctr15
+
+    Ip1   --> |"(07)"|Ctr13
+    Gem1  --> |"(08)"|Ctr13
+    Ip3   --> |"(09)"|Ctr13
+    Ctr13 --> |"(10)"|Ctr16
+
+    Ctr15 --> |"(11)"|Ctr17
+    Ctr14 --> |"(12)"|Ctr17
+    Ctr16 --> |"(13)"|Ctr17
+
+    subgraph Role_Relevance["Criteria 1 : Role Relevance"]
+        Ctr12
+        Ctr15
+        Ctr11
+        Ctr14
+        Ctr13
+        Ctr16
+        Ctr17
+    end
+
+    classDef role fill:#E3F8DD,stroke:#2E7D32,color:#000
+    class Ctr13,Ctr12,Ctr11,Ctr16,Ctr15,Ctr14,Ctr17 role
+
+    %% ================================================
+    %% Criteria 2
+    Ctr21{"English?<br>(Ctr21)"}
+    Ctr22["Thai LLM Process<br>(Ctr22)"]
+    Ctr23["• Quantifiable impact<br>• Skill demonstration<br>• Specificity<br>• Grammar & Language<br>(Ctr23)"]
+    Ctr24["Content score<br>(Ctr24)"]
+
+    Ip1   --> |"(14)"|Ctr21  
+    Ctr21 --> |"Yes<br>(15)"|Ctr23
+    Ctr21 --> |"No<br>(16)"|Ctr22 
+    Ctr22 --> |"(17)"|Ctr23
+    Gem2  --> |"(18)"|Ctr23
+    Ctr23 --> |"(19)"|Ctr24
+
+    subgraph Content_quality["Criteria 2 : Content Quality"]
+        Ctr21
+        Ctr22
+        Ctr23
+        Ctr24
+    end
+    classDef content fill:#FFF9C4,stroke:#FBC02D,color:#000
+    class Ctr21,Ctr22,Ctr23,Ctr24 content
+
+    %% ================================================
+    %% Criteria 3
+    Ctr31["• Contact<br>• Summary<br>• Education<br>• Experience<br>• Skills<br>(Ctr31)"]
+    Ctr32["Section score<br>(Ctr32)"]
+
+    Ip1   --> |"(20)"|Ctr31
+    Gem3  --> |"(21)"|Ctr31
+    Ctr31 --> |"(22)"|Ctr32
+
+    subgraph Section-Level["Criteria 3 : Section-Level"]
+        Ctr31
+        Ctr32
+    end
+
+    classDef section fill:#FFE0B2,stroke:#EF6C00,color:#000
+    class Ctr31,Ctr32 section
+
+    %% ================================================
+    %% Grading
+    Op1{"Sum score<br>(Op1)"}
+    Op2["Gradding<br>(Op2)"]
+
+    Ctr17  --> |"(23)"|Op1
+    Ctr24  --> |"(24)"|Op1
+    Ctr32  --> |"(25)"|Op1
+    Op1    --> |"(26)"|Op2
+
+    classDef score fill:#EEEEEE,stroke:#424242,color:#000
+    class Op1,Op2 score
+
+
+    %% ================================================
+    %% COLORED LINE STYLES (Perfectly Mapped)
+    %% ================================================
+
+    %% Input lines (blue)
+    linkStyle 0,1,3,4,7,9,23,14,20 stroke:#004D80,stroke-width:2px
+
+    %% Role Relevance (pink)
+    linkStyle 8,18,5,21 stroke:#FFC0CB,stroke-width:2px
+
+    %% Role Relevance (green)
+    linkStyle 10,13,6,11,2,12,23 stroke:#2E7D32,stroke-width:2px
+
+    %% Content (yellow)
+    linkStyle 16,15,17,19,24 stroke:#FBC02D,stroke-width:2px
+
+    %% Section-Level (orange)
+    linkStyle 22,25 stroke:#EF6C00,stroke-width:2px

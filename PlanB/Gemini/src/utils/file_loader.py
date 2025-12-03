@@ -16,6 +16,7 @@ print("/code/src/utils/file_loader.py")
 
 import os
 import json
+import yaml
 
 def get_project_root():
     # __file__ = /code/src/utils/file_loader.py
@@ -33,3 +34,10 @@ def load_json(filename: str) -> dict:
     file_path = os.path.join(base_dir, "data", filename)
     with open(file_path, "r", encoding="utf-8") as f:
         return json.load(f)
+
+
+def load_yaml(filename: str):
+    base_dir = get_project_root()
+    file_path = os.path.join(base_dir, "data", filename)
+    with open(file_path, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)

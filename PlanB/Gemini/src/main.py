@@ -171,30 +171,30 @@ def config_status():
     return {"config":config}
 
 
-class UpdateModelConfig(BaseModel):
-    provider: str | None = None
-    embedding_model: str | None = None
-    generation_model: str | None = None
+# class UpdateModelConfig(BaseModel):
+#     provider: str | None = None
+#     embedding_model: str | None = None
+#     generation_model: str | None = None
 
-CONFIG_PATH = "config/model.yaml"
+# CONFIG_PATH = "config/model.yaml"
 
 
-@app.put("/config/models", tags=["Admin"])
-def update_model_config(payload: UpdateModelConfig):
-    with open(CONFIG_PATH, "r", encoding="utf-8") as f:
-        config = yaml.safe_load(f)
+# @app.put("/config/models", tags=["Admin"])
+# def update_model_config(payload: UpdateModelConfig):
+#     with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+#         config = yaml.safe_load(f)
 
-    # Update only fields that user sends
-    if payload.provider is not None:
-        config["model"]["provider"] = payload.provider
-    if payload.embedding_model is not None:
-        config["model"]["embedding_model"] = payload.embedding_model
-    if payload.generation_model is not None:
-        config["model"]["generation_model"] = payload.generation_model
+#     # Update only fields that user sends
+#     if payload.provider is not None:
+#         config["model"]["provider"] = payload.provider
+#     if payload.embedding_model is not None:
+#         config["model"]["embedding_model"] = payload.embedding_model
+#     if payload.generation_model is not None:
+#         config["model"]["generation_model"] = payload.generation_model
 
-    # Write back to YAML
-    with open(CONFIG_PATH, "w", encoding="utf-8") as f:
-        yaml.dump(config, f, sort_keys=False)
+#     # Write back to YAML
+#     with open(CONFIG_PATH, "w", encoding="utf-8") as f:
+#         yaml.dump(config, f, sort_keys=False)
 
-    return {"message": "Model config updated", "config": config}
+#     return {"message": "Model config updated", "config": config}
 
